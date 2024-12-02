@@ -31,9 +31,6 @@ fun NavGraph(navController: NavHostController,viewModel: ThucDonViewModel) {
             if(id != null){
                 DetailScreen(navController = navController, id, viewModel)
             }
-
         }
-
-
     }
 }

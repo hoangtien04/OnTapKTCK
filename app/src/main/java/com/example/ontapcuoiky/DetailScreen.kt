@@ -85,7 +85,6 @@ fun DetailScreen(navController: NavController,id:String,viewModel: ThucDonViewMo
         Box (
             modifier = Modifier.fillMaxSize().padding(it),
         ){
-
             Box(
                 modifier = Modifier.background(Color.White).height(280.dp).fillMaxWidth()
             ){
@@ -104,10 +103,9 @@ fun DetailScreen(navController: NavController,id:String,viewModel: ThucDonViewMo
                 ).background(Color.Blue),
             ) {
                 Column(modifier = Modifier
-                        .fillMaxSize()
-                        .padding(14.dp),
-                    verticalArrangement = Arrangement.spacedBy(35.dp)) {
-                    Column(modifier = Modifier.fillMaxWidth()){
+                        .fillMaxSize().padding(),
+                    verticalArrangement = Arrangement.spacedBy(20.dp)) {
+                    Column(modifier = Modifier.fillMaxWidth().padding(14.dp)){
                         Text(
                             text = thucDon.name.uppercase(),
                             fontSize = 24.sp,
@@ -119,16 +117,16 @@ fun DetailScreen(navController: NavController,id:String,viewModel: ThucDonViewMo
                         Text(
                             text = thucDon.price.toString(),
                             fontSize = 18.sp,
-                            color = Color.White,
+                            color = Color.Red,
                             modifier = Modifier.fillMaxWidth().padding(8.dp),
                             textAlign = TextAlign.Center,
                             fontWeight = FontWeight.Bold
                         )
                     }
-                    Text(text = thucDon.description,color = Color.White,textAlign = TextAlign.Justify)
+                    Text(text = thucDon.description,color = Color.White,textAlign = TextAlign.Justify,modifier = Modifier.padding(14.dp))
                     Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.fillMaxWidth().padding(bottom = 80.dp),
+                        verticalAlignment = Alignment.Bottom,
                         horizontalArrangement = Arrangement.End
                     ){
                         Button(onClick = {
@@ -178,7 +176,7 @@ fun DetailScreen(navController: NavController,id:String,viewModel: ThucDonViewMo
                             }
                         },
                             shape = RoundedCornerShape(topStartPercent = 0, bottomStartPercent = 0, topEndPercent = 12, bottomEndPercent = 12),
-                            modifier = Modifier.height(52.dp).width(70.dp),
+                            modifier = Modifier.height(52.dp).width(70.dp).padding(end = 14.dp),
                             colors = ButtonDefaults.buttonColors(
                                 containerColor = Color.White
                             )

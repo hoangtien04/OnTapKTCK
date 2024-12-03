@@ -1,6 +1,7 @@
 package com.example.ontapcuoiky
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -24,6 +25,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.ontapcuoiky.ui.theme.OnTapCuoiKyTheme
@@ -49,6 +51,7 @@ fun homeScreen(viewModel: ThucDonViewModel,navController: NavController) {
     var thucDonlist by remember {
         mutableStateOf(viewModel.getThucDon())
     }
+    val activity = (LocalContext.current as? Activity)
 
     Scaffold(
         topBar = {
@@ -57,7 +60,7 @@ fun homeScreen(viewModel: ThucDonViewModel,navController: NavController) {
                     Text(text = "Thực đơn")
                 },
                 actions = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = { activity?.finishAndRemoveTask() }) {
                         Icon(
                             imageVector = Icons.Filled.ExitToApp,
                             contentDescription = "",

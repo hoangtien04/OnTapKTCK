@@ -22,6 +22,7 @@ fun NavGraph(navController: NavHostController,viewModel: ThucDonViewModel) {
         composable(route = Screen.Home.route) {
             homeScreen(navController = navController, viewModel = viewModel)
         }
+
         composable(
             route = Screen.Detail.route + "?id={id}",
             arguments = listOf(navArgument("id") {nullable = true}

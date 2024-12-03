@@ -128,7 +128,7 @@ fun DetailScreen(navController: NavController,id:String,viewModel: ThucDonViewMo
                     }
                     Text(text = thucDon.description,color = Color.White,textAlign = TextAlign.Justify,modifier = Modifier.padding(14.dp))
                     Row(
-                        modifier = Modifier.fillMaxWidth().padding(bottom = 80.dp),
+                        modifier = Modifier.fillMaxWidth(),
                         verticalAlignment = Alignment.Bottom,
                         horizontalArrangement = Arrangement.End
                     ){
